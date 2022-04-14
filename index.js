@@ -8,11 +8,11 @@ app.listen(port, () => {
 });
 
 const login = [
-    {
-        mail:"gerson@technomancers.cl",
-        pass:"123",
-    }
-]
+  {
+    mail: "gerson@technomancers.cl",
+    pass: "123",
+  },
+];
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -21,16 +21,19 @@ app.use(express.static("public"));
 
 app.use("/bootstrap", express.static("node_modules/bootstrap/dist"));
 app.use("/css", express.static("public/css"));
+app.use("/jquery", express.static("node_modules/jquery/dist"));
 
 app.get("/", (_req, res) => {
-    res.sendFile(__dirname + "public/index.html");
+  res.sendFile(__dirname + "public/index.html");
 });
 
-//new commit to main branch
-
-
-
-
-
-
-
+app.post("/login", (req, res) => {
+    const { email, password } = req.body;
+    console.log(email, password)
+    const user = login.find((u) => u.mail === email && u.pass === password);
+    if (user) {
+        res.send("Welcome");
+    } else {
+        res.send("Wrong credentials");
+    }
+});
