@@ -10,3 +10,7 @@ Feel free to use this as practice or in your upcoming projects, if you like you 
 Have a great day!
 
 Gerson Herrera.
+
+
+
+Added JQUERY and AXIOS for Frontend data and mock db (JSON) in the Backend.
