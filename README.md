@@ -12,6 +12,7 @@ Have a great day!
 Gerson Herrera.
 
 
+<<<<<<< HEAD
 Database arguments needed
 
 CREATE DATABASE login;
@@ -20,3 +21,7 @@ CREATE DATABASE login;
 
 CREATE TABLE login (id SERIAL PRIMARY KEY, email VARCHAR(60) NOT NULL, password VARCHAR(50) NOT NULL);
 
+=======
+
+Added JQUERY and AXIOS for Frontend data and mock db (JSON) in the Backend.
+>>>>>>> c208d2fc6e001d6c1c290c66b829d58edab32c9e
