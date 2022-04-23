@@ -44,7 +44,7 @@
           <button
             class="w-100 btn btn-lg btn-primary"
             type="submit"
-            href="/login"
+            id="btnLogin"
           >
             Sign in
           </button>
@@ -57,21 +57,18 @@
     <script>
       const url = "http://localhost:3000";
       $(document).ready(function () {
-        $("form").submit(async (e) => {
+        $("#btnLogin").click(async (e) => {
           e.preventDefault();
           let email = $("#floatingInput").val();
           let password = $("#floatingPassword").val();
-          let response = await axios.post(url + "/login", {
+
+          const payload = {
             email,
             password,
-          });
-          console.log(response.data);
-            if (response.data == "Welcome") {
-                window.location.href = "/";
-                alert("Welcome");
-            } else {
-                alert("Usuario o contraseña incorrectos");
-            }
+          };
+          const {data:token} = await axios.post("/login", payload);
+          window.location.href = `/data?token=${token}`;
+          alert("Login successful");
         });
       });
     </script>

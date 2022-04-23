@@ -10,3 +10,13 @@ Feel free to use this as practice or in your upcoming projects, if you like you 
 Have a great day!
 
 Gerson Herrera.
+
+
+Database arguments needed
+
+CREATE DATABASE login;
+
+\c login
+
+CREATE TABLE login (id SERIAL PRIMARY KEY, email VARCHAR(60) NOT NULL, password VARCHAR(50) NOT NULL);
+
